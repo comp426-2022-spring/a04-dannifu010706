@@ -19,7 +19,7 @@ if (row === undefined) {
         
     `;
 
-    db.exec(logdata);
+    logdb.exec(logdata);
 
     console.log('Your database has been initialized with a new table and two entries containing a username and password.');
 } else {
