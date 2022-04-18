@@ -17,10 +17,6 @@ if (row === undefined) {
         
     `;
     logdb.exec(log);
-
-} else {
-
-    console.log('Database exists.')
 }
 
 module.exports = logdb
