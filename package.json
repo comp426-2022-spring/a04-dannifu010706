@@ -1,6 +1,7 @@
 {
   "name": "a03-dannifu010706",
   "version": "0.1.0",
+  "type":"module",
   "description": "A3",
   "main": "server.js",
   "scripts": {
