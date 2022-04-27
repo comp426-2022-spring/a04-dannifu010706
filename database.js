@@ -13,15 +13,14 @@ if (row === undefined) {
             id INTEGER PRIMARY KEY, 
             remoteaddr TEXT, 
             remoteuser TEXT, 
-            date TEXT, 
+            time TEXT, 
             method TEXT, 
             url TEXT, 
             protocol TEXT,
-            httpversion NUMERIC, 
-            status INTEGER, 
-            content_length NUMERIC,
-            referrer_url TEXT,
-            user_agent TEXT
+            httpversion TEXT, 
+            status TEXT, 
+            referer TEXT,
+            useragent TEXT
         );
     `
     logdb.exec(sqlInit)

@@ -41,12 +41,12 @@ if (args.log != "false" && args.log != false) {
 } 
 
 if (args.debug) {
-    app.get('/app/log/access', (req, res) => {
+    app.get('/app/log/access', (req, res, next) => {
         const stmt = logdb.prepare('SELECT * FROM accesslog').all();
         res.status(200).json(stmt)
     })
 
-    app.get('/app/error', (req, res) => {
+    app.get('/app/error', (req, res, next) => {
         throw new Error('error test successful.')
     })
 }
@@ -127,32 +127,32 @@ app.use((req, res, next) => {
   const info = stmt.run(logdata.remoteaddr, logdata.remoteuser, logdata.time, logdata.method, logdata.url, logdata.protocol, logdata.httpversion, logdata.status, logdata.referer, logdata.useragent)
   next()
 })
-app.get("/app/", (req, res) => {
+app.get("/app/", (req, res, next) => {
   res.statusCode = 200
   res.statusMessage = "ok"
   res.writeHead(res.statusCode, { "Content-Type": "text/plain" })
   res.end(res.statusCode + " " + res.statusMessage)
 })
 
-app.get("/app/flip/", (req, res) => {
+app.get("/app/flip/", (req, res, next) => {
   var flip = coinFlip()
   return res.status(200).json({ "flip": flip })
 })
 
-app.get("/app/flips/:number", (req, res) => {
+app.get("/app/flips/:number", (req, res, next) => {
   var numFlips = req.params.number
   var flipResults = coinFlips(numFlips)
   var summary = countFlips(flipResults)
   return res.status(200).json({ "raw": flipResults, "summary": summary })
 })
 
-app.get("/app/flip/call/heads", (req, res) => {
+app.get("/app/flip/call/heads", (req, res, next) => {
   return res.status(200).json(flipACoin("heads"))
 })
 
-app.get("/app/flip/call/tails", (req, res) => {
+app.get("/app/flip/call/tails", (req, res, next) => {
   return res.status(200).json(flipACoin("tails"))
 })
-app.use(function (req, res) {
+app.use(function (req, res, next) {
   res.status(404).send("404 NOT FOUND")
 })
