@@ -1,0 +1,81 @@
+{
+  
+    "name": "a04",
+  
+    "version": "1.0.0",
+  
+    "description": "a04 API middleware error and log",
+  
+    "main": "server.js",
+  
+    "scripts": {
+  
+      
+    "test": "nodemon server.js --port=3500 --debug",
+  
+      
+    "start": "nodemon server.js"
+  
+    },
+  
+    "repository": {
+  
+      
+    "type": "git",
+  
+      
+    "url": "git+https://github.com/comp426-2022-spring/a04-dannifu010706.git"
+  
+    },
+  
+    "keywords": [
+  
+      
+    "a04",
+  
+      
+    "api",
+  
+      
+    "error",
+  
+      
+    "log"
+  
+    ],
+  
+    "author": "Nifu Dan",
+  
+    "license": "GPL-3.0-or-later",
+  
+    "bugs": {
+  
+      
+    "url": "https://github.com/comp426-2022-spring/a04-dannifu010706/issues"
+  
+    },
+  
+    "homepage": "https://github.com/comp426-2022-spring/a04-dannifu010706#readme",
+  
+    "dependencies": {
+  
+      
+    "better-sqlite3": "^7.5.1",
+  
+      
+    "express": "^4.17.3",
+  
+      
+    "fs": "^0.0.1-security",
+  
+      
+    "minimist": "^1.2.6",
+  
+      
+    "morgan": "^1.10.0",
+  
+      
+    "nodemon": "^2.0.15"
+  
+    }
+}
